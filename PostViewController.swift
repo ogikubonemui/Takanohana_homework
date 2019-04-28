@@ -16,8 +16,11 @@ class PostViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = "画面をタップして「ドヤ顔ナベアツ」を出そう！"
     }
     
+    
+    @IBOutlet weak var label: UILabel!
     
     @IBAction func didButton(_ sender: Any) {
         let num = count

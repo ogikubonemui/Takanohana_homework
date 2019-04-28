@@ -19,13 +19,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T7z-pO-BUb">
-                                <rect key="frame" x="66" y="345" width="283" height="207"/>
+                                <rect key="frame" x="84" y="345" width="247" height="207"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="結果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-rf-biy">
-                                <rect key="frame" x="80" y="247" width="269" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="○○回目の" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8I-rf-biy">
+                                <rect key="frame" x="80" y="247" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="○○のナベアツです" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZd-Xc-G0g">
+                                <rect key="frame" x="80" y="276" width="295" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ナベアツというアニメーターの女性がいる" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyX-x0-mhA">
+                                <rect key="frame" x="82" y="593" width="330" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,7 +50,9 @@
                     </view>
                     <connections>
                         <outlet property="image" destination="T7z-pO-BUb" id="yTU-Qy-Tym"/>
+                        <outlet property="information" destination="QyX-x0-mhA" id="www-qA-yKI"/>
                         <outlet property="result" destination="V8I-rf-biy" id="Hml-0K-o51"/>
+                        <outlet property="type" destination="gZd-Xc-G0g" id="7As-ca-2e2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -51,32 +67,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFY-8Y-KHK">
-                                <rect key="frame" x="176" y="433" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="カウント"/>
-                                <connections>
-                                    <action selector="coutUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W0Y-5J-Rp6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSx-hd-hNY">
-                                <rect key="frame" x="176" y="433" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="カウント"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSx-hd-hNY">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="NbH-AM-Qfc"/>
+                                    <constraint firstAttribute="width" constant="200" id="mbX-bM-c5M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="判定！">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="coutUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cf9-NZ-ZyF"/>
                                     <action selector="didButton:" destination="GOa-kk-E8Z" eventType="touchUpInside" id="fSo-YZ-DYR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画面をタップして「ドヤ顔ナベアツ」を出そう！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cl-Ys-dvc">
+                                <rect key="frame" x="27" y="226" width="360" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9cl-Ys-dvc" firstAttribute="top" secondItem="udm-hh-1Nb" secondAttribute="top" constant="182" id="4D6-4b-PfL"/>
+                            <constraint firstItem="9cl-Ys-dvc" firstAttribute="leading" secondItem="udm-hh-1Nb" secondAttribute="leading" constant="27" id="FIr-ZY-wGu"/>
+                            <constraint firstItem="wSx-hd-hNY" firstAttribute="centerY" secondItem="xXT-0P-2sX" secondAttribute="centerY" id="HLO-JT-Bnd"/>
+                            <constraint firstItem="wSx-hd-hNY" firstAttribute="centerX" secondItem="xXT-0P-2sX" secondAttribute="centerX" id="ddH-ec-DqT"/>
+                            <constraint firstItem="udm-hh-1Nb" firstAttribute="trailing" secondItem="9cl-Ys-dvc" secondAttribute="trailing" constant="27" id="oui-me-7CX"/>
+                            <constraint firstItem="9cl-Ys-dvc" firstAttribute="centerX" secondItem="xXT-0P-2sX" secondAttribute="centerX" id="rbr-QZ-MfI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="udm-hh-1Nb"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="aQH-fq-BME" appends="YES" id="Oar-6V-KVb"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="label" destination="9cl-Ys-dvc" id="1fq-bp-FQ4"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toNext" id="pKu-Cm-9oY"/>
                     </connections>
                 </viewController>
@@ -87,7 +118,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-845" y="124"/>
+            <point key="canvasLocation" x="-846.37681159420299" y="123.88392857142857"/>
         </scene>
     </scenes>
 </document>

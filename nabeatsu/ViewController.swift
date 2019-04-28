@@ -6,45 +6,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     // Labelにボタンが押した回数が表示される変数を定義
     var num = 0
-    // 3、もしくは3の倍数用の変数を定義
-    var flag3 = false
-    // 5、もしくは5の倍数用の変数を定義
-    var flag5 = false
     
     // 画像用の変数を定義
     let pic0f3 = UIImage(named: "3")
-    let pic0f5 = UIImage(named: "5")
     let pic0f15 = UIImage(named: "15")
     let picUsual = UIImage(named: "usual")
+    
+    let trivias = ["ナベアツはKARAのファンである","ナベアツというアニメーターの女性がいる","ナベアツはリンスはしない派である"]
+    
     
     
     @IBOutlet weak var result: UILabel!
     
+    @IBOutlet weak var type: UILabel!
+    
+    @IBOutlet weak var information: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        result.text = "\(num)回目のナベアツです"
-        
-        flag3 = false
-        flag5 = false
-        
-        if(num % 3 == 0 || num % 10 == 3 || num % 10 == 3){
-            flag3 = true
-        }
-        if(num % 5 == 0 || num % 10 == 5 || num % 10 == 5){
-            flag5 = true
-        }
-        if flag3 && flag5 {
+        let triviaNum = Int.random(in: 0..<trivias.count)
+        result.text = "\(num)回目の"
+        if (num %  15 == 0){
             image.image = pic0f15
-        } else if flag3 {
+            type.text = "ドヤ顔のナベアツです"
+        }else if(num % 3 == 0 || num % 10 == 3 || num % 10 == 3){
             image.image = pic0f3
-        } else if flag5 {
-            image.image = pic0f5
+            type.text = "アホになったナベアツです"
         } else {
             image.image = picUsual
+            type.text = "いつものナベアツです"
         }
         
         if num >= 100 {
             num = 0
         }
+        information.text = trivias[triviaNum]
     }
 }
