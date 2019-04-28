@@ -17,14 +17,13 @@ class ViewController: UIViewController {
     let pic0f15 = UIImage(named: "15")
     let picUsual = UIImage(named: "usual")
     
-    // UILabelをアウトレット接続
-    @IBOutlet weak var output: UILabel!
     
+    @IBOutlet weak var result: UILabel!
     
-
-        // buttonをアクション接続
-    @IBAction func coutUpButton(_ sender: AnyObject) {
-        output.text = "\(num)回目のナベアツさん"
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        result.text = "\(num)回目のナベアツです"
+        
         flag3 = false
         flag5 = false
         
@@ -47,19 +46,5 @@ class ViewController: UIViewController {
         if num >= 100 {
             num = 0
         }
-        
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        image.image = picUsual
-        output.text = ""
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
 }
-

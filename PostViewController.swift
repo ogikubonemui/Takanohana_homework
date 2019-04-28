@@ -10,21 +10,18 @@ import UIKit
 
 class PostViewController: UIViewController {
     var count = 0
-
+    
     @IBAction func tapped(_ sender: Any) {
         count += 1
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
     @IBAction func didButton(_ sender: Any) {
         let num = count
         performSegue(withIdentifier: "toNext", sender: num)
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,8 +29,5 @@ class PostViewController: UIViewController {
             let nextVC = segue.destination as! ViewController
             nextVC.num = sender as! Int
         }
-    
-
     }
-
 }
