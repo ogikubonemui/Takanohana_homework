@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     // UIImageViewをアウトレット接続
     @IBOutlet weak var image: UIImageView!
     // Labelにボタンが押した回数が表示される変数を定義
-    var count = 0
+    var num = 0
     // 3、もしくは3の倍数用の変数を定義
     var flag3 = false
     // 5、もしくは5の倍数用の変数を定義
@@ -21,21 +21,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var output: UILabel!
     
     
-    
-    @IBAction func tapped(_ sender: Any) {
-        count += 1
-    }
-    
-    // buttonをアクション接続
+
+        // buttonをアクション接続
     @IBAction func coutUpButton(_ sender: AnyObject) {
-        output.text = "\(count)回目のナベアツさん"
+        output.text = "\(num)回目のナベアツさん"
         flag3 = false
         flag5 = false
         
-        if(count % 3 == 0 || count % 10 == 3 || count % 10 == 3){
+        if(num % 3 == 0 || num % 10 == 3 || num % 10 == 3){
             flag3 = true
         }
-        if(count % 5 == 0 || count % 10 == 5 || count % 10 == 5){
+        if(num % 5 == 0 || num % 10 == 5 || num % 10 == 5){
             flag5 = true
         }
         if flag3 && flag5 {
@@ -48,8 +44,8 @@ class ViewController: UIViewController {
             image.image = picUsual
         }
         
-        if count >= 100 {
-            count = 0
+        if num >= 100 {
+            num = 0
         }
         
     }

@@ -14,6 +14,7 @@
 		310798892273366A00D341E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310798872273366A00D341E7 /* LaunchScreen.storyboard */; };
 		310798942273366B00D341E7 /* nabeatsuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310798932273366B00D341E7 /* nabeatsuTests.swift */; };
 		3107989F2273366B00D341E7 /* nabeatsuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107989E2273366B00D341E7 /* nabeatsuUITests.swift */; };
+		31A314AF2275C8AC0030C168 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A314AE2275C8AC0030C168 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3107989A2273366B00D341E7 /* nabeatsuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nabeatsuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3107989E2273366B00D341E7 /* nabeatsuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nabeatsuUITests.swift; sourceTree = "<group>"; };
 		310798A02273366B00D341E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31A314AE2275C8AC0030C168 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		310798722273366A00D341E7 = {
 			isa = PBXGroup;
 			children = (
+				31A314AE2275C8AC0030C168 /* PostViewController.swift */,
 				3107987D2273366A00D341E7 /* nabeatsu */,
 				310798922273366B00D341E7 /* nabeatsuTests */,
 				3107989D2273366B00D341E7 /* nabeatsuUITests */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31A314AF2275C8AC0030C168 /* PostViewController.swift in Sources */,
 				310798812273366A00D341E7 /* ViewController.swift in Sources */,
 				3107987F2273366A00D341E7 /* AppDelegate.swift in Sources */,
 			);
