@@ -20,9 +20,14 @@ class ViewController: UIViewController {
     // UILabelをアウトレット接続
     @IBOutlet weak var output: UILabel!
     
+    
+    
+    @IBAction func tapped(_ sender: Any) {
+        count += 1
+    }
+    
     // buttonをアクション接続
     @IBAction func coutUpButton(_ sender: AnyObject) {
-        count += 1
         output.text = "\(count)回目のナベアツさん"
         flag3 = false
         flag5 = false
