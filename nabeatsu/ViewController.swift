@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     // 5、もしくは5の倍数用の変数を定義
     var flag5 = false
     
+    @IBOutlet weak var gameNumber: UILabel!
     // 画像用の変数を定義
     let pic0f3 = UIImage(named: "3")
     let pic0f5 = UIImage(named: "5")
@@ -20,12 +21,19 @@ class ViewController: UIViewController {
     // UILabelをアウトレット接続
     @IBOutlet weak var output: UILabel!
     
+    @IBOutlet weak var text: UILabel!
     // buttonをアクション接続
-    @IBAction func coutUpButton(_ sender: AnyObject) {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    @IBAction func tapped(_ sender: Any) {
+        
+        
         count += 1
-        output.text = "\(count)回目のナベアツさん"
-        flag3 = false
-        flag5 = false
+        gameNumber.text = "\(count)試合目"
         
         if(count % 3 == 0 || count % 10 == 3 || count % 10 == 3){
             flag3 = true
@@ -35,30 +43,24 @@ class ViewController: UIViewController {
         }
         if flag3 && flag5 {
             image.image = pic0f15
+            text.text = "先発はメルセデス投手でした"
         } else if flag3 {
             image.image = pic0f3
+            text.text = "先発はメルセデス投手でした"
         } else if flag5 {
             image.image = pic0f5
+            text.text = "先発はメルセデス投手でした"
+            
         } else {
             image.image = picUsual
+            text.text = "先発はメルセデス投手でした"
         }
         
-        if count >= 100 {
+        if count >= 30 {
             count = 0
         }
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        image.image = picUsual
-        output.text = ""
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
 }
+
 
