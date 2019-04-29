@@ -41,4 +41,17 @@ class ViewController: UIViewController {
         }
         information.text = trivias[triviaNum]
     }
+    
+    @IBAction func didClick(_ sender: Any) {
+        
+        // 送信したいデータ
+        // 送信したデータは送り先のアプリに依存する
+        // 送信したいデータを配列で複数設定可能
+        let data = [image.image!,"ナベアツの写真です"] as [Any]
+        // アクティビティコントローラの設定
+        let controller = UIActivityViewController(activityItems: data, applicationActivities: nil)
+        // アクティビティコントローラの表示
+        present(controller,animated: true, completion: nil)
+        
+    }
 }
